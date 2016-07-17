@@ -1,0 +1,11 @@
+﻿{
+  "frameworks": {
+    ".NETFramework,Version=4.6.1": {}
+  },
+  "runtimes": {
+    "win": {}
+  },
+  "dependencies": {
+    "Prism.Unity": "6.1.1"
+  }
+}

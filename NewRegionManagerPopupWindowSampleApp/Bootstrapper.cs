@@ -1,0 +1,42 @@
+﻿using NewRegionManagerPopupWindowSampleApp.Views;
+using Prism.Modularity;
+using Prism.Unity;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using Microsoft.Practices.Unity;
+using Prism.Regions;
+using NewRegionManagerPopupWindowSampleApp.Commons;
+
+namespace NewRegionManagerPopupWindowSampleApp
+{
+    class Bootstrapper : UnityBootstrapper
+    {
+        protected override DependencyObject CreateShell()
+        {
+            return this.Container.Resolve<MainWindow>();
+        }
+
+        protected override void ConfigureModuleCatalog()
+        {
+            base.ConfigureModuleCatalog();
+            var mc = (ModuleCatalog)this.ModuleCatalog;
+            mc.AddModule(typeof(AppModule));
+        }
+
+        protected override IRegionBehaviorFactory ConfigureDefaultRegionBehaviors()
+        {
+            var f = base.ConfigureDefaultRegionBehaviors();
+            f.AddIfMissing(RegionManagerAwareBehavior.Key, typeof(RegionManagerAwareBehavior));
+            return f;
+        }
+
+        protected override void InitializeShell()
+        {
+            Application.Current.MainWindow.Show();
+        }
+    }
+}
