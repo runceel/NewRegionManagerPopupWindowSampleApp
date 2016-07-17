@@ -1,15 +1,10 @@
-﻿using NewRegionManagerPopupWindowSampleApp.Views;
-using Prism.Modularity;
-using Prism.Unity;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using Microsoft.Practices.Unity;
-using Prism.Regions;
+﻿using Microsoft.Practices.Unity;
 using NewRegionManagerPopupWindowSampleApp.Commons;
+using NewRegionManagerPopupWindowSampleApp.Views;
+using Prism.Modularity;
+using Prism.Regions;
+using Prism.Unity;
+using System.Windows;
 
 namespace NewRegionManagerPopupWindowSampleApp
 {
